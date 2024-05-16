@@ -1,0 +1,17 @@
+[
+   {
+      "codigo": 1,
+      "nome": "Fulano",
+      "email": "fulano@gmail.com"
+   },
+   {
+      "codigo": 2,
+      "nome": "Cilano",
+      "email": "ciclano@gmail.com"
+   },
+   {
+      "codigo": 3,
+      "nome": "Beltrano",
+      "email": "beltrano@gmail.com"
+   }
+]
