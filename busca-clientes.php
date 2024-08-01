@@ -1,22 +1,19 @@
-<?php  
-$server = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "meubanco";
+<?php
+    require_once("conexao.php");
 
-try {
-    $conn = new PDO("mysql:host=$server;dbname=$dbname", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT * FROM cliente");
-    $stmt->execute();
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $json = json_encode($results);
-    print($json);
+    try {
+        $stmt = $conn->prepare("SELECT * FROM cliente");
+        $stmt->execute();
     
-
-} catch(PDOexception $e) {
-    echo "Error: " . $e->getMessage();
-}
-$conn = null;
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $json = json_encode($results);
+        print($json);
+    
+    } catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    
+    $conn = null; 
 ?>
+
+
